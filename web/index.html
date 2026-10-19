@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Safehouse — International Creator Collective</title>
+  <meta name="description" content="Safehouse is an international creator collective for streamers, musicians, artists, filmmakers and builders. Find your people, ship your work.">
+  <meta name="theme-color" content="#070403">
+  <meta property="og:title" content="Safehouse">
+  <meta property="og:description" content="An international home for creators. Stream, make music, art, film, games and tech together.">
+  <meta property="og:image" content="assets/safehouse-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="waves" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="edge-glow" aria-hidden="true"></div>
+
+  <header class="glass-header">
+    <a class="brand" href="#" aria-label="Safehouse home">
+      <svg class="brand-mark" viewBox="0 0 200 200" aria-hidden="true"><use href="#emblem"/></svg>
+      <span class="brand-word">SAFEHOUSE</span>
+    </a>
+    <nav class="header-actions">
+      <a class="icon-btn" data-link="youtubeUrl" href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-youtube"/></svg>
+      </a>
+      <a class="icon-btn" data-link="discordInvite" href="#" aria-label="Discord">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-discord"/></svg>
+      </a>
+      <a class="btn btn-glow btn-sm" data-link="studioUrl" data-label="studioLabel" href="#">Enter the Studio</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="sun" aria-hidden="true"></div>
+
+    <section class="hero-copy">
+      <p class="eyebrow">International creator collective</p>
+      <h1 class="wordmark">SAFEHOUSE</h1>
+      <div class="divider" aria-hidden="true"><span></span><i>✦</i><span></span></div>
+      <p class="lede">
+        A home base for creators across every timezone: streamers, producers, artists,
+        filmmakers, designers, game devs and builders. We collab, run live sessions,
+        share drops and give each other a hand. Whatever you make, there's room for you here.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-discord" data-link="discordInvite" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-discord"/></svg>
+          Join the Discord
+        </a>
+        <a class="btn btn-ghost" data-link="youtubeUrl" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-youtube"/></svg>
+          YouTube
+        </a>
+      </div>
+      <a class="studio-card" data-link="studioUrl" href="#">
+        <span class="studio-tag">Agentic tools</span>
+        <span class="studio-title"><span data-label="studioLabel">Enter the Studio</span> <span aria-hidden="true">→</span></span>
+        <span class="studio-sub">AI agents for clipping, captions, beats, artwork and posting, so you can get back to making things.</span>
+      </a>
+    </section>
+
+    <aside class="announcements glass" aria-label="Discord announcements">
+      <div class="ann-head">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>#announcements</span>
+      </div>
+      <div class="ann-body" id="ann-body">
+        <div class="ann-empty">
+          <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#emblem"/></svg>
+          <p>Announcements from the Discord show up here.</p>
+          <a class="btn btn-ghost btn-sm" data-link="discordInvite" href="#">Open Discord</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <p class="tap-hint" aria-hidden="true">tap anywhere</p>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="emblem" viewBox="0 0 200 200">
+      <path d="M60.8 150 A70 70 0 1 1 139.2 150" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+      <path fill="currentColor" fill-rule="evenodd" d="M60 150V95l40-33 40 33v55zM88 112v38h24v-38z"/>
+      <path d="M24 150h152" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="145" cy="38.4" r="6.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-discord" viewBox="0 0 24 24"><path fill="currentColor" d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.5C.6 9.1-.3 13.7.1 18.2a19.9 19.9 0 0 0 6 3l1.3-2.1a13 13 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.9-9.8-3.6-13.8zM8 15.5c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4z"/></symbol>
+    <symbol id="ico-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"/></symbol>
+  </svg>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

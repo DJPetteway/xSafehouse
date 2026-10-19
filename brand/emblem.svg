@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" role="img" aria-label="Safehouse emblem">
+  <!-- Single-colour silhouette of the Safehouse mark: ring, house with open door, horizon, rising sun. -->
+  <g fill="currentColor" stroke="currentColor">
+    <path d="M60.8 150 A70 70 0 1 1 139.2 150" fill="none" stroke-width="3.2" stroke-linecap="round"/>
+    <path fill-rule="evenodd" stroke="none" d="M60 150V95l40-33 40 33v55zM88 112v38h24v-38z"/>
+    <path d="M24 150h152" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="145" cy="38.4" r="6.5" stroke="none"/>
+  </g>
+</svg>
