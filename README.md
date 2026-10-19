@@ -50,7 +50,7 @@ on Vercel, Netlify or Cloudflare Pages.
 
 - `brand/safehouse-logo.png`: the full logo
 - `brand/emblem.svg`: single-colour silhouette emblem (uses `currentColor`, so it takes on
-  whatever colour it's placed in). It's also the page watermark.
+  whatever colour it's placed in). It's the icon in the site header and favicon.
 - `brand/banner-*.png`: X/Twitter (1500×500), YouTube (2560×1440, safe area respected),
   Discord (960×540), wide (1920×640)
 

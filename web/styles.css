@@ -180,19 +180,6 @@ a { color: inherit; text-decoration: none; }
   padding: 120px 0 64px;
 }
 
-.watermark {
-  position: fixed;
-  z-index: -1;
-  left: 50%;
-  top: 50%;
-  width: var(--mark);
-  height: var(--mark);
-  transform: translate(-50%, -50%);
-  color: var(--ink);
-  opacity: 0.055;
-  pointer-events: none;
-}
-
 .sun {
   position: fixed;
   z-index: -1;
