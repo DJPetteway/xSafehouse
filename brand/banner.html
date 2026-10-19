@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- Banner template. Render with: node brand/render-banners.mjs
+     ?w=&h= set canvas size; ?s= sets the content scale (YouTube needs a small safe area). -->
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: var(--w); height: var(--h); overflow: hidden; background: #070403; }
+  .stage {
+    position: relative; width: var(--w); height: var(--h); overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(255,106,26,.6) 0, rgba(184,54,10,.2) 2.5%, transparent 12%),
+      radial-gradient(45% 70% at 50% 100%, rgba(255,106,26,.22), transparent 70%),
+      radial-gradient(120% 120% at 50% 50%, transparent 50%, rgba(0,0,0,.75)),
+      #070403;
+  }
+  .grain {
+    position: absolute; inset: 0; opacity: .1; mix-blend-mode: screen;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 .85  0 0 0 0 .7  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .content {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(var(--s));
+    display: flex; align-items: center; gap: 70px; width: 1400px; justify-content: center;
+  }
+  .mark { width: 330px; height: 330px; position: relative; flex: none; }
+  .mark svg { width: 100%; height: 100%; overflow: visible; }
+  .sun {
+    position: absolute; left: 72.5%; top: 19.2%; width: 46px; height: 46px; transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffe8d0 0, #ffb27a 25%, #ff6a1a 50%, rgba(255,106,26,0) 74%);
+    box-shadow: 0 0 80px 30px rgba(255,106,26,.35);
+  }
+  .sun::before { content:""; position:absolute; left:50%; top:50%; width:420%; height:7%; transform:translate(-50%,-50%);
+    background: radial-gradient(closest-side, rgba(255,160,90,.7), transparent); }
+  .text { color: #f5e6d3; }
+  .eyebrow { font: 600 22px/1 Inter, sans-serif; letter-spacing: .34em; text-transform: uppercase; color: #ffb27a; }
+  h1 { font: 400 112px/1 "Krona One", sans-serif; letter-spacing: .02em; margin: 22px 0 26px; text-shadow: 0 0 50px rgba(255,106,26,.3); }
+  .divider { display: flex; align-items: center; gap: 20px; width: 520px; }
+  .divider span { flex: 1; height: 2px; background: linear-gradient(90deg, transparent, rgba(245,230,211,.75)); }
+  .divider span:last-child { background: linear-gradient(90deg, rgba(245,230,211,.75), transparent); }
+  .divider i { font-style: normal; font-size: 26px; text-shadow: 0 0 14px #ff6a1a; }
+  .tags { margin-top: 26px; font: 500 22px/1 Inter, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: rgba(245,230,211,.6); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="content">
+    <div class="mark">
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="house" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a1804"/><stop offset=".6" stop-color="#d5520f"/><stop offset="1" stop-color="#ff7a2a"/>
+          </linearGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+        </defs>
+        <path d="M60 150V95l40-33 40 33v55z" fill="#ff6a1a" filter="url(#glow)" opacity=".55"/>
+        <path d="M60.8 150 A70 70 0 1 1 139.2 150" fill="none" stroke="#f1dcc4" stroke-width="2.2" stroke-linecap="round"/>
+        <path fill="url(#house)" fill-rule="evenodd" d="M60 150V95l40-33 40 33v55zM88 112v38h24v-38z"/>
+        <rect x="88" y="112" width="24" height="38" fill="#0b0503"/>
+        <rect x="86" y="146" width="28" height="5" fill="#ffb27a" filter="url(#glow)" opacity=".9"/>
+        <path d="M18 150h164" stroke="#ff8a3d" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M84 156h32M90 162h20M95 168h10" stroke="#ff6a1a" stroke-width="1.6" stroke-linecap="round" opacity=".55"/>
+      </svg>
+      <div class="sun"></div>
+    </div>
+    <div class="text">
+      <div class="eyebrow">International creator collective</div>
+      <h1>SAFEHOUSE</h1>
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+      <div class="tags">Stream · Music · Art · Film · Games · Tech</div>
+    </div>
+  </div>
+  <div class="grain"></div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const r = document.documentElement.style;
+  r.setProperty("--w", (q.get("w") || 1500) + "px");
+  r.setProperty("--h", (q.get("h") || 500) + "px");
+  r.setProperty("--s", q.get("s") || 1);
+</script>
+</body>
+</html>
